@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
 import LoginPopup from './components/LoginPopup/LoginPopup'
+import Cart from './pages/Cart/Cart'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Navbar setShowLogin={setShowLogin} />  
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/cart' element={<Cart />}></Route>
       </Routes>
       </div>
       <Footer />
