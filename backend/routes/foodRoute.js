@@ -1,7 +1,7 @@
 import express from "express"
 import multer from 'multer'
 
-import { addFood, listFood } from '../controller/foodController.js'
+import { addFood, listFood, removeFood } from '../controller/foodController.js'
 
 const foodRouter = express.Router()   
 
@@ -17,5 +17,6 @@ const upload = multer({storage:storage})
 
 foodRouter.post('/add', upload.single('image'), addFood)
 foodRouter.get('/list', listFood)
+foodRouter.post('/remove', removeFood)
 
 export default foodRouter 
