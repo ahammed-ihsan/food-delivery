@@ -6,7 +6,34 @@ import 'dotenv/config'
 
 //login
 const loginUser = async (req, res) => {
-    
+
+    //take data from request body
+    const {email, password} = req.body
+    try{
+
+        //find user by email from database
+        const user = await userModel.findOne({email})
+
+        //check user exists
+        if(!user){
+            return res.json({success: false, message: `user doesn't exist`})
+        }
+        
+        //check the password is correct
+        const isMatch = await bcrypt.compare(password, user.password)
+        
+        //conditon for incorrect password
+        if(!isMatch){
+            return res.json({success: false, message: 'Invalid credentials'})
+        }
+        
+        //generate token
+        const token = createToken(user._id)
+        res.json({success: true, token})
+    }catch(err){
+        console.log(err);
+        res.json({success: false, message: 'Error'})
+    }
 }
 
 const createToken = (id) => {
