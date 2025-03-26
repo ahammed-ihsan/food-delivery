@@ -7,6 +7,7 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Verify from './pages/Verify/Verify'
+import MyOrders from './pages/MyOrders/MyOrders'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='/cart' element={<Cart />}></Route>
         <Route path='/order' element={<PlaceOrder />} ></Route>
         <Route path='/verify' element={<Verify />}></Route>
+        <Route path='/myorders' element={<MyOrders />}></Route>
       </Routes>
       </div>
       <Footer />
