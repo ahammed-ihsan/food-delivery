@@ -11,7 +11,7 @@ import Order from './pages/Orders/Order'
 
 const App = () => {
 
-  const url = 'http://localhost:3000'
+  const url = 'https://food-delivery-2-ep79.onrender.com'
 
   return (
     <div>
